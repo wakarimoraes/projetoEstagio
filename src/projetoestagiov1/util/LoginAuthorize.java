@@ -27,7 +27,7 @@ public class LoginAuthorize {
         Recordset rSenha = connection.executeQuery(strLogin);
         Recordset rLogin = connection.executeQuery(strSenha);
         rSenha.getField("senha");rLogin.getField("login");
-        //testegit
+        //testegit2
         if (rSenha.next() && rLogin.next()){
             System.out.println("Logado");
             CadastroAlunos cad = new CadastroAlunos();
