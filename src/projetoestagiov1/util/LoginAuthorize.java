@@ -22,21 +22,17 @@ public class LoginAuthorize {
     Usuario user = new Aluno();
     public boolean autorizarLogin(String login, String senha) throws FilloException{
         con.getConexao();
-        String strLogin = "Select login from tb_usuario where login='"+login+"'";
-        String strSenha = "Select senha from tb_usuario where login='"+senha+"'";
-        Recordset rSenha = connection.executeQuery(strLogin);
-        Recordset rLogin = connection.executeQuery(strSenha);
-        rSenha.getField("senha");rLogin.getField("login");
+        String strLogin = "Select login from tb_usuario where login='"+login+"' and senha ='"+senha+"'";
+        Recordset rAutenticar = connection.executeQuery(strLogin);
         //testegit2
-        if (rSenha.next() && rLogin.next()){
+        if (rAutenticar.next()){
             System.out.println("Logado");
             CadastroAlunos cad = new CadastroAlunos();
             cad.setVisible(true);
         }else{
             System.out.println("Usuário ou senha incorretos");
         }
-        rSenha.close();
-        rLogin.close();
+        rAutenticar.close();
         connection.close();
         return true;
         
