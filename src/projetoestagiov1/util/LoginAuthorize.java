@@ -12,6 +12,7 @@ import projetoestagiov1.conexao.Conexao;
 import static projetoestagiov1.conexao.Conexao.connection;
 import projetoestagiov1.conexao.Usuario;
 import projetoestagiov1.formularios.CadastroAlunos;
+import projetoestagiov1.formularios.TelaPrincipal;
 
 /**
  *
@@ -27,8 +28,8 @@ public class LoginAuthorize {
         //testegit2
         if (rAutenticar.next()){
             System.out.println("Logado");
-            CadastroAlunos cad = new CadastroAlunos();
-            cad.setVisible(true);
+            TelaPrincipal tp = new TelaPrincipal();
+            tp.setVisible(true);
         }else{
             System.out.println("Usuário ou senha incorretos");
         }

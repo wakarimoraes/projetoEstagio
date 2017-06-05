@@ -97,8 +97,6 @@ public class Login extends javax.swing.JFrame {
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
-        txtSenha.setText("jPasswordField1");
-
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Usuário");
 
