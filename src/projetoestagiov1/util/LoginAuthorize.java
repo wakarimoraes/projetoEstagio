@@ -21,19 +21,23 @@ import projetoestagiov1.formularios.TelaPrincipal;
 public class LoginAuthorize {
     Conexao con = new Conexao();
     Usuario user = new Aluno();
+    
     public boolean autorizarLogin(String login, String senha) throws FilloException{
         con.getConexao();
+        
         String strLogin = "Select login from tb_usuario where login='"+login+"' and senha ='"+senha+"'";
         Recordset rAutenticar = connection.executeQuery(strLogin);
-        //testegit2
+        
         if (rAutenticar.next()){
-            System.out.println("Logado");
+            
             TelaPrincipal tp = new TelaPrincipal();
             tp.setVisible(true);
         }else{
             System.out.println("Usuário ou senha incorretos");
+            rAutenticar.close();
         }
         rAutenticar.close();
+        
         connection.close();
         return true;
         

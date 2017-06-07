@@ -9,9 +9,11 @@ import com.codoid.products.exception.FilloException;
 import com.codoid.products.fillo.Connection;
 import com.codoid.products.fillo.Fillo;
 import com.codoid.products.fillo.Recordset;
+import java.util.Iterator;
 import projetoestagiov1.conexao.Conexao;
 import static projetoestagiov1.conexao.Conexao.connection;
 import projetoestagiov1.formularios.CadastroAlunos;
+import projetoestagiov1.formularios.ListaAlunos;
 import projetoestagiov1.formularios.Login;
 import projetoestagiov1.util.UtilAlunos;
 
@@ -26,36 +28,13 @@ public class Main {
      * @throws com.codoid.products.exception.FilloException
      */
     public static void main(String[] args) throws FilloException {
-        /*Fillo fillo=new Fillo();
-        
-         Connection connection=fillo.getConnection("C:/Users\\dedeh\\OneDrive\\Documentos\\bd_aluno.xlsx");
-        
-         String strQuery="Select * from Sheet1";
-         Recordset recordset=connection.executeQuery(strQuery);
 
-         while(recordset.next())
-         {
-         System.out.println(recordset.getField("Nome"));
-         }
 
-         recordset.close();
-         connection.close();*/
-Login log = new Login();
-log.setVisible(true);
+        Login log  = new Login();
+        log.setVisible(true);
+
 
 
     }
 }
 
-/* INSERT AQUI
- Fillo fillo=new Fillo();
- Connection connection=fillo.getConnection("C:\\Test.xlsx");
- String strQuery="INSERT INTO tb_aluno(Nome) VALUES(nome)";
-
- connection.executeUpdate(strQuery);
-
- connection.close();
-        
- SELECT AQUI
-        
- */

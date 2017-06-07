@@ -9,6 +9,8 @@ import com.codoid.products.exception.FilloException;
 import com.codoid.products.fillo.Connection;
 import com.codoid.products.fillo.Fillo;
 import com.codoid.products.fillo.Recordset;
+import java.util.ArrayList;
+import projetoestagiov1.conexao.Aluno;
 
 import projetoestagiov1.conexao.Conexao;
 import static projetoestagiov1.conexao.Conexao.connection;
@@ -37,17 +39,30 @@ public class UtilAlunos {
 
     }
 
-    public boolean ListarAluno() throws FilloException {
+    public ArrayList ListarAluno() throws FilloException {
         con.getConexao();
+        
+        ArrayList<Aluno> alunos = new ArrayList();
+        Aluno lista = new Aluno();
+        
         String strQuery = "Select * from tb_aluno";
         Recordset rs = connection.executeQuery(strQuery);
-        while (rs.next()) {
-            System.out.println(rs.getField("Nome"));
+        
+
+        
+        while (rs.next()) 
+        {
+        lista.setCurso(rs.getField("Curso"));
+        lista.setNome(rs.getField("Nome"));
+ 
+            alunos.add(lista);
         }
+
         
         rs.close();
         connection.close();
-        return true;
-
+        return alunos;
+        
     }
+    
 }
