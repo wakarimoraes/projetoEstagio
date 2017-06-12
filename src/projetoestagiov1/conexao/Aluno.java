@@ -9,52 +9,60 @@ package projetoestagiov1.conexao;
  *
  * @author dedeh
  */
-public class Aluno extends Usuario {
-    public int Matricula;
-    public String Nome;
-    public int Periodo;
+public class Aluno  {
+    public String matricula;
+    public String nome;
+    public String periodo;
     public String curso;
 
     /**
-     * @return the Matricula
+     * @return the matricula
      */
-    public int getMatricula() {
-        return Matricula;
+        public Aluno(String Matricula, String Nome, String Curso, String periodo)
+    {
+     this.curso = Curso ;
+     this.matricula = Matricula;
+     this.nome = Nome;
+     this.periodo = periodo;
+    }
+        
+    public String getMatricula() {
+        return matricula;
     }
 
     /**
-     * @param Matricula the Matricula to set
+     * @param Matricula the matricula to set
      */
-    public void setMatricula(int Matricula) {
-        this.Matricula = Matricula;
+    public void setMatricula(String Matricula) {
+        this.matricula = Matricula;
     }
 
     /**
-     * @return the Nome
+     * @return the nome
      */
     public String getNome() {
-        return Nome;
+        return nome;
     }
 
     /**
-     * @param Nome the Nome to set
+     * @param Nome the nome to set
      */
     public void setNome(String Nome) {
-        this.Nome = Nome;
+        this.nome = Nome;
     }
 
     /**
-     * @return the Periodo
+     * @return the periodo
      */
-    public int getPeriodo() {
-        return Periodo;
+    public String getPeriodo() {
+        return periodo;
     }
 
     /**
-     * @param Periodo the Periodo to set
+     * @param Periodo the periodo to set
      */
-    public void setPeriodo(int Periodo) {
-        this.Periodo = Periodo;
+    public void setPeriodo(String Periodo) {
+        this.periodo = Periodo;
     }
 
     /**

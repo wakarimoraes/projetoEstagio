@@ -10,9 +10,10 @@ import com.codoid.products.fillo.Connection;
 import com.codoid.products.fillo.Fillo;
 import com.codoid.products.fillo.Recordset;
 import java.util.Iterator;
+import javax.rmi.CORBA.Util;
 import projetoestagiov1.conexao.Conexao;
 import static projetoestagiov1.conexao.Conexao.connection;
-import projetoestagiov1.formularios.CadastroAlunos;
+import projetoestagiov1.formularios.AlterarAluno;
 import projetoestagiov1.formularios.ListaAlunos;
 import projetoestagiov1.formularios.Login;
 import projetoestagiov1.util.UtilAlunos;
@@ -28,13 +29,10 @@ public class Main {
      * @throws com.codoid.products.exception.FilloException
      */
     public static void main(String[] args) throws FilloException {
-
-
+       
         Login log  = new Login();
-        log.setVisible(true);
-
-
-
+       log.setVisible(true);
+       
     }
 }
 

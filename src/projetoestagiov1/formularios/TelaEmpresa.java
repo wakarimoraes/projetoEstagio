@@ -36,6 +36,7 @@ public class TelaEmpresa extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(465, 429));
 
         jPanel1.setBackground(new java.awt.Color(52, 152, 219));
@@ -87,9 +88,7 @@ public class TelaEmpresa extends javax.swing.JFrame {
                                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(28, 28, 28)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel3)
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
                                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -139,6 +138,7 @@ public class TelaEmpresa extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void lbCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbCloseMouseClicked

@@ -39,30 +39,39 @@ public class UtilAlunos {
 
     }
 
-    public ArrayList ListarAluno() throws FilloException {
+    /*public ArrayList ListarAluno() throws FilloException {
         con.getConexao();
         
         ArrayList<Aluno> alunos = new ArrayList();
-        Aluno lista = new Aluno();
+        
         
         String strQuery = "Select * from tb_aluno";
         Recordset rs = connection.executeQuery(strQuery);
         
-
-        
         while (rs.next()) 
         {
-        lista.setCurso(rs.getField("Curso"));
-        lista.setNome(rs.getField("Nome"));
- 
-            alunos.add(lista);
+         Aluno aluno = null ;
+         aluno.setCurso(rs.getField("Curso"));aluno.setNome(rs.getField("Nome"));
+         alunos.add(aluno);
         }
-
-        
         rs.close();
         connection.close();
         return alunos;
         
+    }*/
+        public ArrayList<Aluno> listaAlunos() throws FilloException {
+        ArrayList<Aluno> alunos = new ArrayList<Aluno>();
+        con.getConexao();
+
+        String strQuery = "Select * from tb_aluno";
+        Recordset rs = connection.executeQuery(strQuery);
+        Aluno aluno;
+
+        while (rs.next()) {
+            aluno = new Aluno(rs.getField("Matricula"), rs.getField("Nome"), rs.getField("Curso"), rs.getField("Periodo"));
+            alunos.add(aluno);
+        }
+        return alunos;
     }
     
 }

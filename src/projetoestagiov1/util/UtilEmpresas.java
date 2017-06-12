@@ -7,13 +7,13 @@ package projetoestagiov1.util;
 
 import projetoestagiov1.conexao.Conexao;
 import static projetoestagiov1.conexao.Conexao.connection;
-import projetoestagiov1.conexao.Usuario;
+
 
 /**
  *
  * @author dedeh
  */
-public class UtilEmpresas extends Usuario {
+public class UtilEmpresas  {
 
     Conexao con = new Conexao();
 

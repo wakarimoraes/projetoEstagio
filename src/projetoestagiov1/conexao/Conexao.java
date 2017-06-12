@@ -20,9 +20,8 @@ public class Conexao {
     public Connection getConexao() throws FilloException{
             Fillo fillo=new Fillo();
             try{
-                 connection=fillo.getConnection("C:\\Users\\dedeh\\OneDrive\\Documentos\\bd_aluno.xlsx");
-                System.out.println("Conexão efetuada");
-                
+                 connection=fillo.getConnection("C:\\Users\\dedeh\\OneDrive\\Documentos\\bd_aluno.xlsx");          
+         
             }catch(FilloException e){
                 e.getMessage();
             }

@@ -7,29 +7,19 @@ package projetoestagiov1.formularios;
 
 import com.codoid.products.exception.FilloException;
 import com.codoid.products.fillo.Recordset;
-import java.awt.Point;
-import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JOptionPane;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
-import projetoestagiov1.conexao.Aluno;
 import projetoestagiov1.conexao.Conexao;
 import static projetoestagiov1.conexao.Conexao.connection;
-import projetoestagiov1.util.UtilAlunos;
 
 /**
  *
  * @author dedeh
  */
-public class ListaAlunos extends javax.swing.JFrame {
+public class ConsultaVagas extends javax.swing.JFrame {
 
     /**
-     * Creates new form ListaAlunos
+     * Creates new form ConsultaVagas
      */
-    public ListaAlunos() {
+    public ConsultaVagas() {
         initComponents();
     }
 
@@ -51,7 +41,6 @@ public class ListaAlunos extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(52, 152, 219));
 
@@ -77,39 +66,24 @@ public class ListaAlunos extends javax.swing.JFrame {
         tbAlunos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         tbAlunos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null},
+                {null},
+                {null},
+                {null},
+                {null},
+                {null},
+                {null},
+                {null},
+                {null},
+                {null},
+                {null},
+                {null},
+                {null}
             },
             new String [] {
-                "Nome", "Curso", "Matricula", "Periodo"
+                "null"
             }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        ));
         tbAlunos.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
         tbAlunos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         tbAlunos.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -118,7 +92,6 @@ public class ListaAlunos extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(tbAlunos);
-        tbAlunos.getAccessibleContext().setAccessibleDescription("");
 
         jLabel2.setFont(new java.awt.Font("Segoe Print", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -134,22 +107,22 @@ public class ListaAlunos extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(224, 224, 224)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(184, 184, 184)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 137, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel2))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap(18, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 704, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(221, 221, 221)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -161,9 +134,9 @@ public class ListaAlunos extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel6)
                         .addComponent(jLabel2)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -180,58 +153,53 @@ public class ListaAlunos extends javax.swing.JFrame {
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-   
- 
-  
 
-  
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       
-        try 
+
+        try
         {
             Conexao con = new Conexao(); con.getConexao();
             String strQuery = "Select * from tb_aluno";
             Recordset rs = connection.executeQuery(strQuery);
             int i=-1;
             while(rs.next())
-        {   
-            
-            i++;
-            tbAlunos.setValueAt(rs.getField("Nome"), i, 0);
-            tbAlunos.setValueAt(rs.getField("Curso"), i, 1);
-            tbAlunos.setValueAt(rs.getField("Matricula"), i, 2);
-            tbAlunos.setValueAt(rs.getField("Periodo"), i, 3);
-            
-        }
-          
+            {
+
+                i++;
+                tbAlunos.setValueAt(rs.getField("Nome"), i, 0);
+                tbAlunos.setValueAt(rs.getField("Curso"), i, 1);
+                tbAlunos.setValueAt(rs.getField("Matricula"), i, 2);
+                tbAlunos.setValueAt(rs.getField("Periodo"), i, 3);
+
+            }
+
         } catch (FilloException ex) {
             ex.getMessage();
         }
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void tbAlunosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbAlunosMouseClicked
+        if (evt.getClickCount() == 2){
+            AlterarAluno at = new AlterarAluno();
+
+            int i = tbAlunos.getSelectedRow();
+
+            at.alterar(tbAlunos.getValueAt(i, 0).toString(), tbAlunos.getValueAt(i, 1).toString());
+
+            at.setVisible(true);
+
+            this.dispose();
+        }
+
+    }//GEN-LAST:event_tbAlunosMouseClicked
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         this.dispose();
         TelaPrincipal tp = new TelaPrincipal();
         tp.setVisible(true);
     }//GEN-LAST:event_jLabel2MouseClicked
-
-    private void tbAlunosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbAlunosMouseClicked
-    if (evt.getClickCount() == 2){
-        AlterarAluno at = new AlterarAluno();
-           
-            int i = tbAlunos.getSelectedRow();
-           
-            at.alterar(tbAlunos.getValueAt(i, 0).toString(), tbAlunos.getValueAt(i, 1).toString());
-           
-            at.setVisible(true);
-          
-           this.dispose();
-       }
-       
-    }//GEN-LAST:event_tbAlunosMouseClicked
 
     /**
      * @param args the command line arguments
@@ -250,22 +218,21 @@ public class ListaAlunos extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ListaAlunos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ConsultaVagas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ListaAlunos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ConsultaVagas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ListaAlunos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ConsultaVagas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ListaAlunos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ConsultaVagas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ListaAlunos().setVisible(true);
+                new ConsultaVagas().setVisible(true);
             }
-
         });
     }
 
